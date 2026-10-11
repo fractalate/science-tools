@@ -15,12 +15,12 @@
 <main>
 <div class="eyebrow">The essentials, at a glance</div><h1>Chemistry constants</h1>
 <p class="intro">A small reference for big calculations. Fundamental constants, energy conversions, and light conversions, with the units you need.</p>
-<div class="toolbar"><span>6 constants · Scientific notation · SI by default</span><button id="reset" type="button">Reset to SI ↺</button></div>
+<div class="toolbar"><span>7 constants · Scientific notation · SI by default</span><button id="reset" type="button">Reset to SI ↺</button></div>
 <div class="table-wrap"><table><thead><tr><th scope="col">Constant</th><th scope="col">Symbol</th><th scope="col">Value</th><th scope="col">Units</th></tr></thead><tbody id="constants"></tbody></table></div>
 
 <div class="bottom">
 <section class="panel"><div class="eyebrow" style="margin-bottom:12px">Energy conversion</div><h2>Joules ↔ electronvolts</h2><p>Choose a direction or enter an energy to convert.</p><div class="converter"><input id="energy" type="number" value="1" step="any" aria-label="Energy to convert"><select id="direction" aria-label="Energy conversion direction"><option value="J">J → eV</option><option value="eV">eV → J</option></select></div><div id="conversion" class="result" aria-live="polite"></div></section>
-<aside class="panel note"><div class="eyebrow">A note on precision</div><h2 style="margin-top:12px">Same constant. Different units.</h2><p>Changing units changes the displayed value, not the physical quantity. Values marked “exact” are defined in SI; converted displays may be rounded.</p><p>Electron and proton masses are measured values. Their standard uncertainties are shown below the value. All numbers use scientific notation.</p></aside>
+<aside class="panel note"><div class="eyebrow">A note on precision</div><h2 style="margin-top:12px">Same constant. Different units.</h2><p>Changing units changes the displayed value, not the physical quantity. Values marked “exact” are defined in SI; converted displays may be rounded.</p><p>Electron and proton masses and the Rydberg energy are measured values. Their standard uncertainties are shown below the value. All numbers use scientific notation.</p></aside>
 </div>
 <section class="panel light-panel" aria-labelledby="light-title">
 <div class="eyebrow" style="margin-bottom:12px">Light conversion</div><h2 id="light-title">Wavelength ↔ frequency</h2>
@@ -57,6 +57,7 @@ const charge=1.602176634e-19;
 const constants=[
  {name:'Avogadro constant',symbol:'N<sub>A</sub>',description:'Number of entities per mole',value:6.02214076e23,digits:9,units:[['mol⁻¹',1],['mmol⁻¹',1e-3],['kmol⁻¹',1e3]]},
  {name:'Planck constant',symbol:'h',description:'Relates photon energy to frequency',value:6.62607015e-34,digits:9,units:[['J · s',1],['eV · s',1/charge],['erg · s',1e7]]},
+ {name:'Rydberg energy',symbol:'hcR<sub>∞</sub>',description:'Hydrogen ground-state binding energy in the infinite-nuclear-mass limit',value:2.1798723611030e-18,uncertainty:2.4e-30,digits:14,units:[['J',1],['eV',1/charge],['erg',1e7]]},
  {name:'Elementary charge',symbol:'e',description:'Magnitude of a single proton’s charge',value:charge,digits:10,units:[['C',1],['mC',1e3],['μC',1e6],['e',1/charge]]},
  {name:'Electron mass',symbol:'m<sub>e</sub>',description:'Rest mass of an electron',value:9.1093837139e-31,uncertainty:2.8e-40,digits:11,units:[['kg',1],['g',1e3],['u',null,5.485799090441e-4,9.7e-15]]},
  {name:'Proton mass',symbol:'m<sub>p</sub>',description:'Rest mass of a proton',value:1.67262192595e-27,uncertainty:5.2e-37,digits:12,units:[['kg',1],['g',1e3],['u',null,1.0072764665789,8.3e-12]]},
