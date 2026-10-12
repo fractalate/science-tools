@@ -1,3 +1,13 @@
+## Update: 2026-10-12
+
+The application is `conversions.html` (older notes below refer to `index.html`). It is branded Science Tools and supports chemistry, spectroscopy, and classical mechanics. Chemistry is selected initially. Multiple selected disciplines show the intersection of their tagged constants, tools, and formulas; no selection or Show all displays everything. Item tags are editorial relevance assignments. Filtering hides existing elements, retaining input and unit choices.
+
+There are 11 constants and 13 compact formula table rows, displayed before the constants, with variables, units, and applicability conditions. New constants: G (with uncertainty), standard gravity (exact conventional reference), Boltzmann constant, and molar gas constant. Values follow the local 2022 CODATA listing. The mechanics tool computes force, signed momentum, and kinetic energy from SI inputs, requiring positive mass and finite values. Standard gravity is explicitly distinguished from local gravity.
+
+The shared formatter displays exponent 1 as exponent 0, retaining significant digits. Existing light converter validation and reserved error layout remain intact. Full inline script execution using a DOM mock checked discipline intersections, show-all, mechanics values/invalid input, light error/recovery, and formatting. No real browser visual verification was available.
+
+---
+
 # Science Tools project notes
 
 Updated: 2026-10-11.
