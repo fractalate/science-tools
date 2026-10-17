@@ -14,6 +14,7 @@ window.MathJax = {tex: {inlineMath: [['\\(', '\\)']]}, svg: {fontCache: 'global'
 .prefix-panel{margin-top:24px}.prefix-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.prefix-heading a{font-size:11px}.prefix-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:16px 0}.prefix-item{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 8px;background:var(--paper);border-radius:6px;padding:9px 11px}.prefix-item dt{font-size:12px}.prefix-item dd{margin:0}.prefix-symbol{font-family:ui-monospace,monospace;font-size:15px;font-weight:600;color:var(--green)}.prefix-factor{grid-column:1 / -1;font-family:ui-monospace,monospace;font-size:12px;color:var(--muted)}.prefix-panel .prefix-note{margin:0;font-size:12px}@media(max-width:900px){.prefix-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:540px){.prefix-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.prefix-item{padding:8px}.prefix-heading{flex-wrap:wrap}}
 
 [hidden]{display:none!important}.section-title{font-family:Georgia,serif;font-size:26px;font-weight:400;margin:32px 0 12px}.discipline-picker{border:1px solid var(--line);border-radius:10px;padding:20px;background:white}.discipline-picker legend{font-weight:600;padding:0 8px}.discipline-options{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.discipline-options label{display:flex;align-items:center;gap:8px;padding:10px;background:var(--paper);border-radius:6px;cursor:pointer}.discipline-options input{width:18px;height:18px;accent-color:var(--green)}.discipline-picker p,.formula-help,.empty{font-size:13px;margin-bottom:0}.formula-table{margin-top:16px}.formula-table td{padding:14px 24px}.formula-table td:first-child{width:23%}.equation{font-size:17px;color:var(--green);min-width:230px}.equation mjx-container{margin:0!important}.formula-detail mjx-container{font-size:105%!important}.formula-detail{font-size:12px;line-height:1.6;color:var(--muted)}.bottom:has(>section[hidden]){display:none}@media print{.discipline-picker{display:none}}
+.circular-panel{margin-top:24px}.circular-panel h2{margin-top:10px}.circular-panel .table-wrap{overflow-x:auto}.circular-panel .circular-note{margin:16px 0 12px}.circular-source{font-size:12px}
 </style>
 </head>
 <body>
@@ -25,15 +26,31 @@ window.MathJax = {tex: {inlineMath: [['\\(', '\\)']]}, svg: {fontCache: 'global'
 <p id="blank-slate" class="empty" role="status" hidden>Select a discipline to show its formulas, constants, and tools.</p>
 <div id="discipline-content">
 <h2 class="section-title">Formulas</h2><p class="formula-help">Use the units specified in each row; most formulas use SI. Each formula includes its variables and conditions.</p><div class="table-wrap formula-table"><table><thead><tr><th scope="col">Formula</th><th scope="col">Equation</th><th scope="col">Variables & conditions</th></tr></thead><tbody id="formulas"></tbody></table></div><p id="formulas-empty" class="empty" hidden>No formulas available for these disciplines. Choose another discipline or show all.</p>
+
+<section id="circular-motion" class="panel circular-panel" data-disciplines="mechanics" aria-labelledby="circular-title">
+<div class="eyebrow">Formula reference</div><h2 id="circular-title">Circular motion · vector notation</h2>
+<p>Motion in a circle of fixed radius \(r>0\), centered at the origin in the \(xy\)-plane. \(\hat r\) points outward, \(\hat\theta\) points toward increasing \(\theta\), and \(\hat k\) points along the positive \(z\)-axis. Angles are in radians; \(v=|\vec v|\) is speed.</p>
+<div class="table-wrap formula-table"><table><thead><tr><th scope="col">Quantity</th><th scope="col">Equation</th><th scope="col">Units</th></tr></thead><tbody>
+<tr><td class="name">Position</td><td class="equation">\(\vec r(t)=r\hat r\)</td><td>m</td></tr>
+<tr><td class="name">Angular velocity</td><td class="equation">\(\vec\omega=\omega_z\hat k,\quad\omega_z=\dfrac{d\theta}{dt}\)</td><td>rad/s</td></tr>
+<tr><td class="name">Velocity</td><td class="equation">\(\vec v=r\dfrac{d\theta}{dt}\hat\theta=r\omega_z\hat\theta\)</td><td>m/s</td></tr>
+<tr><td class="name">Angular acceleration</td><td class="equation">\(\vec\alpha=\alpha_z\hat k,\quad\alpha_z=\dfrac{d\omega_z}{dt}=\dfrac{d^2\theta}{dt^2}\)</td><td>rad/s²</td></tr>
+<tr><td class="name">Acceleration</td><td class="equation">\(\vec a=a_r\hat r+a_\theta\hat\theta\)</td><td>m/s²</td></tr>
+<tr><td class="name">Radial component</td><td class="equation">\(a_r=-\dfrac{v^2}{r}=-r\left(\dfrac{d\theta}{dt}\right)^2=-r\omega_z^2\)</td><td>m/s²</td></tr>
+<tr><td class="name">Tangential component</td><td class="equation">\(a_\theta=r\dfrac{d^2\theta}{dt^2}=r\alpha_z\)</td><td>m/s²</td></tr>
+</tbody></table></div>
+<p class="circular-note">The negative radial component points inward. For uniform circular motion, \(\alpha_z=0\), so acceleration is entirely radial. The unit vectors \(\hat r\) and \(\hat\theta\) change direction as the particle moves.</p>
+<a class="circular-source" href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-3-circular-motion/10-4-review-of-rotational-kinematics/">MIT OpenCourseWare · 10.4 Review of Rotational Kinematics ↗</a>
+</section>
 <h2 class="section-title">Constants</h2>
 <div class="toolbar"><span id="constant-count" aria-live="polite"></span><button id="reset" type="button">Reset to SI ↺</button></div>
 <div class="table-wrap"><table><thead><tr><th scope="col">Constant</th><th scope="col">Symbol</th><th scope="col">Value</th><th scope="col">Units</th></tr></thead><tbody id="constants"></tbody></table></div><p id="constants-empty" class="empty" hidden>No constants available for these disciplines. Choose another discipline or show all.</p>
 
 <h2 class="section-title">Tools</h2><p id="tools-empty" class="empty" hidden>No tools available for these disciplines. SI prefixes below are available to every discipline.</p>
 <div class="bottom">
-<section class="panel" data-disciplines="spectroscopy atomic"><div class="eyebrow" style="margin-bottom:12px">Energy conversion</div><h2>Joules ↔ electronvolts</h2><p>Choose a direction or enter an energy to convert.</p><div class="converter"><input id="energy" type="number" value="1" step="any" aria-label="Energy to convert"><select id="direction" aria-label="Energy conversion direction"><option value="J">J → eV</option><option value="eV">eV → J</option></select></div><div id="conversion" class="result" aria-live="polite"></div></section>
+<section data-tool class="panel" data-disciplines="spectroscopy atomic"><div class="eyebrow" style="margin-bottom:12px">Energy conversion</div><h2>Joules ↔ electronvolts</h2><p>Choose a direction or enter an energy to convert.</p><div class="converter"><input id="energy" type="number" value="1" step="any" aria-label="Energy to convert"><select id="direction" aria-label="Energy conversion direction"><option value="J">J → eV</option><option value="eV">eV → J</option></select></div><div id="conversion" class="result" aria-live="polite"></div></section>
 </div>
-<section data-disciplines="spectroscopy" class="panel light-panel" aria-labelledby="light-title">
+<section data-tool data-disciplines="spectroscopy atomic" class="panel light-panel" aria-labelledby="light-title">
 <div class="eyebrow" style="margin-bottom:12px">Light conversion</div><h2 id="light-title">Wavelength ↔ frequency</h2>
 <p>Convert light in a vacuum using f = c / λ. Enter a decimal or scientific notation such as 5.5e2 nm or 5.45e14 Hz.</p>
 <div class="light-controls">
@@ -56,7 +73,7 @@ window.MathJax = {tex: {inlineMath: [['\\(', '\\)']]}, svg: {fontCache: 'global'
 <p class="light-help">Approximate bands: gamma &lt; 0.01 nm; X-ray 0.01–10 nm; UV 10–380 nm; visible 380–700 nm; infrared 700 nm–1 mm; microwave 1 mm–10 cm; radio ≥ 10 cm. Boundaries vary by convention; microwaves are also part of the radio spectrum.</p>
 <p class="light-help">Visible colors are approximate screen representations of single wavelengths; perception and display reproduction vary. Outside the visible range, no visible color is assigned. References: <a href="https://imagine.gsfc.nasa.gov/science/toolbox/spectrum_chart.html">NASA spectrum bands</a> and <a href="https://science.nasa.gov/ems/09_visiblelight/">visible light</a>.</p>
 </section>
-<section class="panel light-panel" data-disciplines="mechanics" aria-labelledby="mechanics-title">
+<section data-tool class="panel light-panel" data-disciplines="mechanics" aria-labelledby="mechanics-title">
 <div class="eyebrow">Motion calculator</div><h2 id="mechanics-title">Force, momentum & kinetic energy</h2><p>For one-dimensional motion of a constant mass in an inertial frame, well below the speed of light. Velocity and acceleration are signed along the motion axis.</p>
 <div class="light-controls"><div class="field"><label for="motion-mass">Mass (kg)</label><input id="motion-mass" type="number" step="any" value="1" min="0"></div><div class="field"><label for="motion-velocity">Velocity (m/s)</label><input id="motion-velocity" type="number" step="any" value="10"></div><div class="field"><label for="motion-acceleration">Acceleration (m/s²)</label><input id="motion-acceleration" type="number" step="any" value="2"></div></div>
 <div id="motion-result" class="result" aria-live="polite"></div></section>
@@ -155,6 +172,7 @@ const formulas=[
  {name:'Ideal gas law',equation:String.raw`PV = nRT`,detail:String.raw`\(P\): absolute pressure (Pa); \(V\): volume (m³); \(n\): amount (mol); \(T\): absolute temperature (K). Ideal-gas approximation.`,disciplines:['chemistry']},
  {name:'Wavenumber',equation:String.raw`\tilde{\nu} = \frac{1}{\lambda}`,detail:String.raw`Reciprocal vacuum wavelength: \(\lambda\) in cm gives wavenumber in cm⁻¹.`,disciplines:['spectroscopy','atomic']},
  {name:'Kinetic energy',equation:String.raw`K = \frac{1}{2}mv^2`,detail:String.raw`Kinetic energy (J), mass (kg), speed (m/s). Nonrelativistic motion.`,disciplines:['mechanics']},
+ {name:'Momentum',equation:String.raw`p = mv = \frac{dK}{dv}`,detail:String.raw`Momentum \(p\) (kg m/s), constant mass \(m\) (kg), signed velocity \(v\) (m/s), kinetic energy \(K=\frac12mv^2\) (J). One-dimensional, nonrelativistic motion; differentiate energy with respect to velocity, not time.`,disciplines:['mechanics']},
  {name:'Gravitational potential energy',equation:String.raw`U = mgh`,detail:String.raw`Potential energy \(U\) (J), mass \(m\) (kg), gravity \(g\) (m/s²), height \(h\) (m) above a chosen zero level. Near Earth’s surface, treating \(g\) as constant.`,disciplines:['mechanics']},
  {name:'Universal gravitation',equation:String.raw`F = \frac{Gm_1m_2}{r^2}`,detail:String.raw`Attractive force magnitude (N); masses in kg; center-to-center separation \(r\) in m. Point masses or non-overlapping spherically symmetric bodies.`,disciplines:['mechanics']},
  {name:'Spring force',equation:String.raw`F = -kx`,detail:String.raw`Restoring force (N), spring constant \(k\) (N/m), displacement \(x\) from equilibrium (m). Within the spring’s linear elastic range.`,disciplines:['mechanics']}
@@ -172,7 +190,7 @@ function filterDisciplines(){
  byId('constant-count').textContent=`${count} ${count===1?'constant':'constants'} · Scientific notation · SI by default`;
  byId('constants-empty').hidden=count!==0;
  byId('formulas-empty').hidden=formulas.some(item=>matchesDisciplines(item.disciplines,selected));
- byId('tools-empty').hidden=Array.from(document.querySelectorAll('section[data-disciplines]')).some(el=>!el.hidden);
+ byId('tools-empty').hidden=Array.from(document.querySelectorAll('section[data-tool]')).some(el=>!el.hidden);
 }
 document.querySelectorAll('input[name="discipline"]').forEach(input=>input.addEventListener('change',filterDisciplines));
 byId('all-disciplines').addEventListener('click',()=>{document.querySelectorAll('input[name="discipline"]').forEach(input=>input.checked=true);filterDisciplines();});
