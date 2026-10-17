@@ -22,7 +22,7 @@ window.MathJax = {tex: {inlineMath: [['\\(', '\\)']]}, svg: {fontCache: 'global'
 <main>
 <div class="eyebrow">The essentials, at a glance</div><h1>Science Tools</h1>
 <p class="intro">Constants, formulas, and useful calculators across disciplines. Choose your fields to bring the reference you need into focus.</p>
-<fieldset class="discipline-picker"><legend>Choose disciplines</legend><div class="discipline-options"><label><input type="checkbox" name="discipline" value="chemistry" checked> Chemistry</label><label><input type="checkbox" name="discipline" value="spectroscopy"> Spectroscopy</label><label><input type="checkbox" name="discipline" value="mechanics"> Classical mechanics</label><label><input type="checkbox" name="discipline" value="electromagnetism"> Electromagnetism</label><label><input type="checkbox" name="discipline" value="atomic"> Atomic physics</label><button type="button" id="all-disciplines">Show all</button></div><p id="selection-help">Select multiple disciplines to see all items from any selected discipline. With no disciplines selected, the page is blank. Use Show all to select every discipline.</p></fieldset>
+<fieldset class="discipline-picker"><legend>Choose disciplines</legend><div class="discipline-options"><label><input type="checkbox" name="discipline" value="chemistry" checked> Chemistry</label><label><input type="checkbox" name="discipline" value="spectroscopy"> Spectroscopy</label><label><input type="checkbox" name="discipline" value="mechanics"> Classical mechanics</label><label><input type="checkbox" name="discipline" value="electromagnetism"> Electromagnetism</label><label><input type="checkbox" name="discipline" value="atomic"> Atomic physics</label><label><input type="checkbox" name="discipline" value="trigonometry"> Trigonometry</label><button type="button" id="all-disciplines">Show all</button></div><p id="selection-help">Select multiple disciplines to see all items from any selected discipline. With no disciplines selected, the page is blank. Use Show all to select every discipline.</p></fieldset>
 <p id="blank-slate" class="empty" role="status" hidden>Select a discipline to show its formulas, constants, and tools.</p>
 <div id="discipline-content">
 <h2 class="section-title">Formulas</h2><p class="formula-help">Use the units specified in each row; most formulas use SI. Each formula includes its variables and conditions.</p><div class="table-wrap formula-table"><table><thead><tr><th scope="col">Formula</th><th scope="col">Equation</th><th scope="col">Variables & conditions</th></tr></thead><tbody id="formulas"></tbody></table></div><p id="formulas-empty" class="empty" hidden>No formulas available for these disciplines. Choose another discipline or show all.</p>
@@ -41,6 +41,22 @@ window.MathJax = {tex: {inlineMath: [['\\(', '\\)']]}, svg: {fontCache: 'global'
 </tbody></table></div>
 <p class="circular-note">The negative radial component points inward. For uniform circular motion, \(\alpha_z=0\), so acceleration is entirely radial. The unit vectors \(\hat r\) and \(\hat\theta\) change direction as the particle moves.</p>
 <a class="circular-source" href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-3-circular-motion/10-4-review-of-rotational-kinematics/">MIT OpenCourseWare · 10.4 Review of Rotational Kinematics ↗</a>
+</section>
+
+<section id="trig-identities" class="panel circular-panel" data-disciplines="trigonometry" aria-labelledby="trig-title">
+<div class="eyebrow">Formula reference</div><h2 id="trig-title">Trigonometric identities</h2>
+<p>Angles are in radians (\(\pi\,\mathrm{rad}=180^\circ\)). Identities hold wherever every expression used is defined; denominators must be nonzero. Paired \(\pm\) and \(\mp\) signs go together: choose all upper signs or all lower signs.</p>
+<div class="table-wrap formula-table"><table><thead><tr><th scope="col">Identity</th><th scope="col">Equation</th></tr></thead><tbody>
+<tr><td class="name">Sine sum & difference</td><td class="equation">\(\sin(x\pm y)=\sin x\cos y\pm\cos x\sin y\)</td></tr>
+<tr><td class="name">Cosine sum & difference</td><td class="equation">\(\cos(x\pm y)=\cos x\cos y\mp\sin x\sin y\)</td></tr>
+<tr><td class="name">Tangent sum & difference</td><td class="equation">\(\tan(x\pm y)=\frac{\tan x\pm\tan y}{1\mp\tan x\tan y}\)</td></tr>
+<tr><td class="name">Double angles</td><td class="equation">\(\begin{gathered}\sin(2x)=2\sin x\cos x\\\cos(2x)=\cos^2x-\sin^2x=2\cos^2x-1=1-2\sin^2x\\\tan(2x)=\frac{2\tan x}{1-\tan^2x}\end{gathered}\)</td></tr>
+<tr><td class="name">Power reduction</td><td class="equation">\(\sin^2x=\frac{1-\cos(2x)}{2},\quad\cos^2x=\frac{1+\cos(2x)}{2}\)</td></tr>
+<tr><td class="name">Half angles</td><td class="equation">\(\begin{gathered}\sin\frac{x}{2}=\pm\sqrt{\frac{1-\cos x}{2}},\quad\cos\frac{x}{2}=\pm\sqrt{\frac{1+\cos x}{2}}\\\tan\frac{x}{2}=\frac{\sin x}{1+\cos x}=\frac{1-\cos x}{\sin x}\end{gathered}\)</td></tr>
+<tr><td class="name">Product to sum</td><td class="equation">\(\begin{gathered}\sin x\sin y=\frac{\cos(x-y)-\cos(x+y)}{2}\\\cos x\cos y=\frac{\cos(x-y)+\cos(x+y)}{2}\\\sin x\cos y=\frac{\sin(x+y)+\sin(x-y)}{2}\end{gathered}\)</td></tr>
+<tr><td class="name">Sum to product</td><td class="equation">\(\begin{gathered}\sin x+\sin y=2\sin\frac{x+y}{2}\cos\frac{x-y}{2}\\\sin x-\sin y=2\cos\frac{x+y}{2}\sin\frac{x-y}{2}\\\cos x+\cos y=2\cos\frac{x+y}{2}\cos\frac{x-y}{2}\\\cos x-\cos y=-2\sin\frac{x+y}{2}\sin\frac{x-y}{2}\end{gathered}\)</td></tr>
+</tbody></table></div>
+<p class="circular-note">For half angles, choose each square-root sign from the quadrant of \(x/2\); the sine and cosine signs may differ. Alternate tangent expressions can have different excluded angles. Here \(\sin^2x=(\sin x)^2\), and similarly for the other squared functions.</p>
 </section>
 <h2 class="section-title">Constants</h2>
 <div class="toolbar"><span id="constant-count" aria-live="polite"></span><button id="reset" type="button">Reset to SI ↺</button></div>
@@ -162,6 +178,9 @@ byId('light-input').addEventListener('input',convertLight);
 convertLight();
 const formulas=[
  {name:'Photon energy',equation:String.raw`E = hf = \frac{hc}{\lambda}`,detail:String.raw`\(E\): photon energy (J); \(f\): frequency (Hz); \(\lambda\): vacuum wavelength (m).`,disciplines:['spectroscopy','atomic']},
+ {name:'Sine',equation:String.raw`\sin\theta=\frac{o}{h}`,detail:String.raw`In a right triangle, \(o\) is the side opposite the acute angle \(\theta\), and \(h\) is the hypotenuse.`,disciplines:['trigonometry']},
+ {name:'Cosine',equation:String.raw`\cos\theta=\frac{a}{h}`,detail:String.raw`In a right triangle, \(a\) is the side adjacent to the acute angle \(\theta\) (excluding the hypotenuse), and \(h\) is the hypotenuse.`,disciplines:['trigonometry']},
+ {name:'Tangent',equation:String.raw`\tan\theta=\frac{\sin\theta}{\cos\theta}`,detail:String.raw`Defined where \(\cos\theta\ne0\). In a right triangle this also equals \(o/a\), opposite divided by adjacent.`,disciplines:['trigonometry']},
  {name:'Bohr energy levels',equation:String.raw`E_n = -E_{\mathrm{Ry}}\frac{Z^2}{n^2}`,detail:String.raw`Energy \(E_n\) (J) relative to a free electron; \(E_{\mathrm{Ry}}\): Rydberg energy from the constants table, \(hcR_\infty\approx 2.17987\times10^{-18}\,\mathrm{J}\approx13.6057\,\mathrm{eV}\). nuclear charge number \(Z\); integer \(n\ge1\). Single-electron atom or ion, infinite nuclear mass, nonrelativistic Bohr approximation.`,disciplines:['atomic','spectroscopy']},
  {name:'Bohr orbital radius',equation:String.raw`r_n = a_0\frac{n^2}{Z}`,detail:String.raw`Orbit radius \(r_n\) (m); Bohr radius \(a_0\) (m); nuclear charge number \(Z\); integer \(n\ge1\). Single electron, infinite nuclear mass. Model orbit, rather than a quantum-mechanical electron trajectory.`,disciplines:['atomic']},
  {name:'Bohr electron speed',equation:String.raw`v_n = \frac{Z\alpha c}{n}`,detail:String.raw`Model orbital speed \(v_n\) (m/s); fine-structure constant \(\alpha\); vacuum light speed \(c\); nuclear charge number \(Z\), integer \(n\ge1\). Single electron, infinite nuclear mass; nonrelativistic approximation requires \(Z\alpha/n\ll1\).`,disciplines:['atomic']},
