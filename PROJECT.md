@@ -35,7 +35,7 @@ Measured constants include standard uncertainties. Standard gravity, displayed a
 
 ### Energy conversion
 
-The energy converter uses 1 eV = 1.602176634 × 10⁻¹⁹ J. Its default input is 1 J. It accepts finite positive, zero, or negative energies and reports empty/nonfinite inputs and overflow.
+The energy converter uses 1 eV = 1.602176634 × 10⁻¹⁹ J. Its default input is 1 eV, converted to joules. It accepts finite positive, zero, or negative energies and reports empty/nonfinite inputs and overflow.
 
 ### Light conversion
 
