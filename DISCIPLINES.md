@@ -42,6 +42,7 @@ The light calculator provides optional J/mol and eV/mol photon outputs. Avogadro
 | --- | --- |
 | Speed of light; Planck constant | Spectroscopy, Electromagnetism, Atomic physics, Quantum physics |
 | Elementary charge; Avogadro constant | Chemistry, Spectroscopy, Electromagnetism, Atomic physics, Quantum physics |
+| Boltzmann constant | Chemistry, Spectroscopy, Electromagnetism, Atomic physics, Quantum physics |
 | Electron mass | Atomic physics, Quantum physics |
 | Proton mass; Bohr radius; fine-structure constant | Atomic physics |
 | Rydberg constant; Rydberg energy | Atomic physics, Spectroscopy |
@@ -50,6 +51,8 @@ The light calculator provides optional J/mol and eV/mol photon outputs. Avogadro
 | Vacuum permeability | Electromagnetism |
 | Gravitational constant; Earth’s typical gravity | Classical mechanics |
 | Molar gas constant; Pauling electronegativity scale constant | Chemistry |
+
+Boltzmann’s constant relates temperature to the thermal energy scale k_B T. It supports defect and carrier populations in solid-state chemistry, thermal level populations in spectroscopy and atomic/quantum physics, and thermal radiation in electromagnetism. Units include J/K, eV/K, and erg/K.
 
 ## Calculator mapping
 

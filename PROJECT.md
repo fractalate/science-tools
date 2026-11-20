@@ -13,7 +13,7 @@ Open `conversions.html` directly in a browser. The application has no build step
 
 ## Content and filtering
 
-The application contains 18 constants, 21 shared formula rows, a circular-motion panel, a trigonometric-identities panel, and three calculators. Formulas appear before constants and tools. SI prefixes and a precision note follow the tools.
+The application contains 19 constants, 21 shared formula rows, a circular-motion panel, a trigonometric-identities panel, and three calculators. Formulas appear before constants and tools. SI prefixes and a precision note follow the tools.
 
 Chemistry is selected initially. Multiple selected disciplines display the union of their content without duplicate rows. Show all selects every discipline. With no selection, reference content is hidden and a selection prompt appears. Filtering hides existing elements, preserving input values and unit choices.
 
@@ -26,6 +26,8 @@ The `constants` array provides SI values, significant-digit counts, available un
 Unit entries normally use `[label, multiplierFromSI]`. Independently tabulated values use `[label, null, value, uncertainty]`, including electron and proton masses in atomic mass units. Use their tabulated uncertainties rather than deriving them from separate kilogram and atomic-mass-constant uncertainties.
 
 Exact derived constants use their definitions: ℏ = h/(2π), R = N_A k_B, and the Pauling energy-scale coefficient k = N_A × (1 eV). The Pauling coefficient is 96485.3321233100184 J/mol in ΔE = k(χ_A − χ_B)², with dimensionless electronegativity χ. The scale definition is exact; the bond-energy relation is empirical.
+
+The Boltzmann constant is exactly 1.380649 × 10⁻²³ J/K, with eV/K and erg/K options. Its thermal energy scale k_B T supports solid-state defect and carrier populations, thermal level populations, and thermal radiation.
 
 Measured constants include standard uncertainties. Standard gravity, displayed as Earth’s typical gravity, is the exact conventional reference 9.80665 m/s²; local gravitational acceleration varies.
 
